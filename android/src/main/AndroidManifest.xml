@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.maprohu.app"
+          package="dister.android"
           android:versionCode="1"
-          android:versionName="1.0.0" >
-    <!--
-    <uses-sdk android:targetSdkVersion="23"/>
-    -->
+          android:versionName="1.0.0"
+          android:permission="android.permission.RECEIVE_BOOT_COMPLETED"
+>
 
-    <application android:label="maproapp" >
+    <application android:label="dister" >
+        <receiver android:name=".Autostart">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:enabled="true" android:name=".DisterService" />
     </application>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
 
 </manifest>
