@@ -1,5 +1,8 @@
 package dister.android
 
+import android.content.Intent
+import android.os.IBinder
+
 /**
   * Created by martonpapp on 14/02/16.
   */
